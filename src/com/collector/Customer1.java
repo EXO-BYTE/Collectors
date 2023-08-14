@@ -1,44 +1,3 @@
-/* observe class below 
-
-  public class Product 
- { 
-   private String productName;
-   private float price;
-   private int quantity;
-   private boolean in_stock;
-   private String store_name;
-  //getter and setters 
-
-} 
-
- public class Customer 
- { 
-    private int customer_id;
-    private Product product;
-    private float amount_paid;
-    private float payment_type;
-    private String location;
-   //getter and setter methods 
- } 
-
-
-
-
-
-
-Create and store instances of customer in a list  and perform operations to get below reports 
-
- List of customer as per location 
- List of customer as per product 
- List of customer as per payment_type(cash,card)
- average amount_paid by Customer
- Sum of total amount collected in list as per product
- 
-
-List of products as per store_name 
-Average price of products as per Store_name
-*/
-
 
 package com.collector;
 
@@ -101,11 +60,10 @@ public class Customer1 {
 public static void main(String[] args) {
 		
 		List<Customer1> list = new ArrayList<>();
-		list.add(new Customer1(1,new Product("Shampoo",150,10,true,"Store"),1500,35 ,"Mysore"));
-		list.add(new Customer1(1,new Product("Tea",45,4,true,"BCD"),24,34,"Chennai"));
-        list.add(new Customer1(1,new Product("Chocolate",65,45,false,"ABD"),24,34,"Bangalore"));
-        list.add(new Customer1(1,new Product("Sweet",67,50,false,"ABE"),24,34,"Mysore"));
-        list.add(new Customer1(1,new Product("Nuts",76,12,true,"ABC"),24,34,"Kolkata"));
+		list.add(new Customer1(1,new Product("Milk",50,10,false,"Starbucks"),1500,35 ,"Mysore"));
+		list.add(new Customer1(2,new Product("Tea",45,4,true,"starbucks"),24,34,"Chennai"));
+		list.add(new Customer1(3,new Product("Coffee",45,4,false,"starbucks"),24,34,"Banglore"));
+        l
 		
 		
         Map<String, List<Customer1>> customersByLocation = list.stream().collect(Collectors.groupingBy(Customer1::getLocation));
